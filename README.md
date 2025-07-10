@@ -1,40 +1,46 @@
-# 🏪 Store Rating App – Full Stack Assignment (Roxiler Systems)
+# 🏪 Store Rating App – Roxiler Systems Assignment
 
-A full-stack web application to rate stores with role-based access (Admin, Store Owner, Normal User).
+A full-stack web application for store ratings with role-based access:
+- 🔐 Admin
+- 👤 Normal User
+- 🧑‍💼 Store Owner
 
-## 🚀 Tech Stack
+---
+
+## ⚙️ Tech Stack
 - **Frontend**: React.js
 - **Backend**: Node.js + Express.js
 - **Database**: PostgreSQL + Sequelize ORM
-- **Auth**: JWT + bcrypt
+- **Authentication**: JWT, bcrypt.js
 
 ---
 
-## 👤 User Roles and Features
+## 👤 User Roles
 
-### 🔐 Authentication
-- Register/Login with role selection
-- Password hashing with bcrypt
-- JWT-based auth for protected routes
-
-### 👨‍💼 Admin
-- Add users (normal/admin)
-- Add stores linked to owners
-- View dashboard: user/store/rating count
-- Filter & search users/stores
+### 🛡️ Admin
+- Create stores and users
+- View dashboard stats (users, stores, ratings)
+- List & filter users/stores
 
 ### 🧑‍💼 Store Owner
-- View list of users who rated their store
-- See average rating of their store
+- View users who rated their store
+- Get average rating
 
-### 🙋 Normal User
-- View/search all stores
-- Submit or update rating (1–5)
+### 👤 Normal User
+- View/search stores
+- Submit or update store ratings
 
 ---
 
-## 📁 Project Setup
+## 📁 Project Structure
 
 ```bash
-git clone https://github.com/yourusername/store-rating-app.git
-cd store-rating-app
+store-rating-app/
+├── backend/
+│   ├── controllers/
+│   ├── models/
+│   ├── routes/
+│   ├── middleware/
+│   ├── server.js
+├── frontend/
+│   └── (React app files)
