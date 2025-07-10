@@ -30,9 +30,13 @@ exports.register = async (req, res) => {
       role,
     });
 
-    res.status(201).json({ message: "User registered successfully", userId: newUser.id });
+    res
+      .status(201)
+      .json({ message: "User registered successfully", userId: newUser.id });
   } catch (err) {
-    res.status(500).json({ message: "Registration failed", error: err.message });
+    res
+      .status(500)
+      .json({ message: "Registration failed", error: err.message });
   }
 };
 
@@ -67,5 +71,28 @@ exports.login = async (req, res) => {
     });
   } catch (err) {
     res.status(500).json({ message: "Login failed", error: err.message });
+  }
+};
+
+exports.updatePassword = async (req, res) => {
+  try {
+    const userId = req.user.id;
+    const { currentPassword, newPassword } = req.body;
+
+    const user = await db.user.findByPk(userId);
+
+    const valid = await bcrypt.compare(currentPassword, user.password);
+    if (!valid)
+      return res.status(401).json({ message: "Current password is incorrect" });
+
+    const hashed = await bcrypt.hash(newPassword, 10);
+    user.password = hashed;
+    await user.save();
+
+    res.status(200).json({ message: "Password updated successfully" });
+  } catch (err) {
+    res
+      .status(500)
+      .json({ message: "Failed to update password", error: err.message });
   }
 };
