@@ -5,8 +5,8 @@ const LogoutButton = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    localStorage.clear(); // remove token, role, etc.
-    navigate("/"); // redirect to login
+    localStorage.clear();
+    navigate("/");
   };
 
   return (

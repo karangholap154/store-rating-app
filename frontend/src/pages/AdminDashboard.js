@@ -133,7 +133,7 @@ const AdminDashboard = () => {
             <select className="w-full border px-3 py-2 rounded" value={newUser.role} onChange={(e) => setNewUser({ ...newUser, role: e.target.value })}>
               <option value="user">User</option>
               <option value="admin">Admin</option>
-              <option value="owner">Owner</option> {/* ✅ Added */}
+              <option value="owner">Owner</option>
             </select>
             <button type="submit" className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Create User</button>
           </form>

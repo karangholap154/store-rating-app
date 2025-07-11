@@ -46,7 +46,7 @@ const UserDashboard = () => {
         }
       );
       alert("Rating submitted ✅");
-      fetchStores(); // Refresh data
+      fetchStores();
     } catch (err) {
       alert(err.response?.data?.message || "Failed to submit rating");
     }

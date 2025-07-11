@@ -60,7 +60,7 @@ exports.createUser = async (req, res) => {
   }
 };
 
-// Admin: Get dashboard summary (total users, stores, ratings)
+// Admin: Get dashboard summary
 exports.getDashboardStats = async (req, res) => {
   try {
     const totalUsers = await User.count();

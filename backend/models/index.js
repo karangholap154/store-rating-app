@@ -15,12 +15,10 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-// Models
 db.user = require("./user.model.js")(sequelize, DataTypes);
 db.store = require("./store.model.js")(sequelize, DataTypes);
 db.rating = require("./rating.model.js")(sequelize, DataTypes);
 
-// Relationships
 db.user.hasMany(db.rating);
 db.rating.belongsTo(db.user);
 

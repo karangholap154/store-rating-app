@@ -7,7 +7,6 @@ exports.getOwnerDashboard = async (req, res) => {
   try {
     const ownerId = req.user.id;
 
-    // Get the store owned by this user
     const store = await Store.findOne({
       where: { ownerId },
       include: [
@@ -28,7 +27,6 @@ exports.getOwnerDashboard = async (req, res) => {
       ? (ratings.reduce((sum, r) => sum + r.rating, 0) / ratings.length).toFixed(2)
       : "N/A";
 
-    // Get users who submitted ratings
     const users = ratings.map((r) => ({
       id: r.user.id,
       name: r.user.name,

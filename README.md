@@ -1,6 +1,18 @@
-# 🏬 Store Rating App – Full Stack Assignment
+# 🏬 Store Rating App – Full Stack Project
 
-This is a full-stack web application that allows users to rate stores. It features role-based access for **System Administrator**, **Store Owner**, and **Normal User**. Built as part of an internship coding challenge.
+This is a full-stack web application that allows users to submit ratings for stores. It features **role-based access control** for:
+- 👤 Normal Users
+- 🧑‍💼 Store Owners
+- 🛠️ System Administrators
+
+Built using **React + Node.js + PostgreSQL** as part of the internship challenge.
+
+---
+
+## 🚀 Live URLs
+
+- 🔗 **Frontend (Vercel)**: [https://store-rating-app-mauve.vercel.app](https://store-rating-app-mauve.vercel.app)  
+- 🔗 **Backend (Render)**: [https://store-rating-app-3rta.onrender.com](https://store-rating-app-3rta.onrender.com)
 
 ---
 
@@ -12,55 +24,68 @@ This is a full-stack web application that allows users to rate stores. It featur
 | Owner  | owner@example.com    | Owner@123   |
 | User   | user@example.com     | User@123    |
 
+> 💡 Use these accounts to test login and access different dashboards.
+
 ---
 
-## 🛠 Tech Stack
+## 🛠️ Tech Stack
 
-- **Frontend:** React, Tailwind CSS, Axios, React Router
-- **Backend:** Node.js, Express.js
-- **Auth:** JWT, BcryptJS
-- **Database:** PostgreSQL (via Sequelize ORM)
+- **Frontend**: React, Tailwind CSS, Axios, React Router
+- **Backend**: Node.js, Express.js
+- **Auth**: JWT, bcryptjs
+- **Database**: PostgreSQL (Sequelize ORM)
+- **Deployment**: Vercel (frontend), Render (backend & DB)
 
 ---
 
 ## 📁 Features by Role
 
 ### 👨‍💼 Admin
-- View total users, stores, ratings
-- Add users (admin, owner, user)
-- Add store and assign owner
+- Login and manage the system
+- Add admin, owner, and user accounts
+- Add stores and assign owners
 - View list of users and stores
-- Update password, logout
-
-### 👤 User
-- Login & browse all stores
-- Submit/modify store ratings
-- View own ratings
-- Update password, logout
+- View total stats (user/store/rating count)
+- Update password / logout
 
 ### 🏪 Store Owner
-- See their assigned store
-- View average rating
+- Login and view assigned store
 - See users who rated their store
-- Update password, logout
+- View average store rating
+- Update password / logout
+
+### 👤 Normal User
+- Login and browse all stores
+- Rate and update rating for any store
+- View their submitted ratings
+- Update password / logout
 
 ---
 
-## 🗃️ Database Schema
+## 📄 Database Schema
 
-### Tables:
-- `users`: id, name, email, password, address, role
-- `stores`: id, name, email, address, ownerId (FK)
-- `ratings`: id, rating (1–5), userId (FK), storeId (FK)
+![Database Schema](./schema.png)
 
-📎 Refer to `schema.png` for the visual schema diagram.
+| Table   | Fields |
+|---------|--------|
+| **Users**   | id, name, email, password, address, role |
+| **Stores**  | id, name, email, address, ownerId (FK) |
+| **Ratings** | id, rating (1–5), userId (FK), storeId (FK) |
+
+---
+
+## 🔐 Authentication
+
+- JWT-based login
+- Passwords securely hashed using bcryptjs
+- Role-based protected routes
 
 ---
 
-## 🔐 Authentication & Authorization
+## ⚙️ How to Run Locally
 
-- Secure login with JWT tokens
-- Role-based access middleware
-- Passwords hashed with bcryptjs
+### 1. Clone the Repo
 
----
+```bash
+git clone https://github.com/karangholap154/store-rating-app.git
+cd store-rating-app

@@ -4,7 +4,6 @@ const router = express.Router();
 const adminController = require("../controllers/admin.controller");
 const { verifyToken, isAdmin } = require("../middleware/auth.middleware");
 
-// Admin Dashboard (Test Route)
 router.get("/dashboard", verifyToken, isAdmin, (req, res) => {
   res.json({
     message: "Welcome, Admin!",
