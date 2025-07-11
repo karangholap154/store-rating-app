@@ -13,7 +13,7 @@ const UserDashboard = () => {
 
   const fetchStores = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/api/user/stores", {
+      const res = await axios.get("https://store-rating-app-3rta.onrender.com/api/user/stores", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -37,7 +37,7 @@ const UserDashboard = () => {
 
     try {
       await axios.post(
-        "http://localhost:8080/api/user/rate",
+        "https://store-rating-app-3rta.onrender.com/api/user/rate",
         { storeId, rating },
         {
           headers: {

@@ -13,7 +13,7 @@ const UpdatePassword = () => {
     e.preventDefault();
     try {
       await axios.post(
-        "http://localhost:8080/api/auth/update-password",
+        "https://store-rating-app-3rta.onrender.com/api/auth/update-password",
         form,
         {
           headers: {

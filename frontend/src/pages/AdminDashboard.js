@@ -32,7 +32,7 @@ const AdminDashboard = () => {
 
   const fetchStats = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/api/admin/stats", {
+      const res = await axios.get("https://store-rating-app-3rta.onrender.com/api/admin/stats", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setStats(res.data);
@@ -43,7 +43,7 @@ const AdminDashboard = () => {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/api/admin/users", {
+      const res = await axios.get("https://store-rating-app-3rta.onrender.com/api/admin/users", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setUsers(res.data.users || []);
@@ -54,7 +54,7 @@ const AdminDashboard = () => {
 
   const fetchStores = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/api/admin/stores", {
+      const res = await axios.get("https://store-rating-app-3rta.onrender.com/api/admin/stores", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setStores(res.data.stores || []);
@@ -66,7 +66,7 @@ const AdminDashboard = () => {
   const handleAddUser = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8080/api/admin/create-user", newUser, {
+      await axios.post("https://store-rating-app-3rta.onrender.com/api/admin/create-user", newUser, {
         headers: { Authorization: `Bearer ${token}` },
       });
       alert("User added ✅");
@@ -80,7 +80,7 @@ const AdminDashboard = () => {
   const handleAddStore = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8080/api/admin/create-store", newStore, {
+      await axios.post("https://store-rating-app-3rta.onrender.com/api/admin/create-store", newStore, {
         headers: { Authorization: `Bearer ${token}` },
       });
       alert("Store added ✅");
