@@ -1,10 +1,12 @@
 const dbConfig = require("../config/db.config.js");
 const { Sequelize, DataTypes } = require("sequelize");
 
+// ✅ Sequelize with SSL enabled for Render
 const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
   host: dbConfig.HOST,
   dialect: dbConfig.DIALECT,
   port: dbConfig.PORT,
+  dialectOptions: dbConfig.dialectOptions, // SSL config from db.config.js
 });
 
 const db = {};
