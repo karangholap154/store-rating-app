@@ -52,7 +52,7 @@ Built using **React + Node.js + PostgreSQL** as part of the internship challenge
 - Login and view assigned store
 - See users who rated their store
 - View average store rating
-- Update password / logout
+- Update password / logout 
 
 ### 👤 Normal User
 - Login and browse all stores

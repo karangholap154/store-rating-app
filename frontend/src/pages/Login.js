@@ -65,7 +65,7 @@ const Login = () => {
           </button>
         </form>
 
-        {/* 👇 Demo Credentials */}
+        {/* Demo Credentials */}
         <div className="mt-6 text-sm text-gray-600 bg-gray-50 border border-gray-200 p-4 rounded">
           <p className="font-medium mb-2 text-gray-800">🔑 Demo Logins:</p>
           <p><strong>Admin:</strong> admin@example.com / Admin@123</p>
